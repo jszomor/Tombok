@@ -10,6 +10,16 @@ namespace Tombok
 	{
 		static void Main(string[] args)
 		{
+			Program prog = new Program();
+			//prog.Arrays();
+			prog.Squares();
+
+
+			Console.ReadKey();
+		}
+		
+		private void Arrays()
+		{
 			int[] tomb1 = new int[100];
 			int[] tomb2 = new int[200];
 
@@ -29,7 +39,7 @@ namespace Tombok
 			int k = 0;
 			for (int i = 0; i < tomb3.Length; i++)
 			{
-				if(tomb2.Length > k && tomb1.Length > j)
+				if (tomb2.Length > k && tomb1.Length > j)
 				{
 					if (tomb1[j] < tomb2[k])
 					{
@@ -53,13 +63,36 @@ namespace Tombok
 					}
 				}
 			}
-
 			for (int i = 0; i < tomb3.Length; i++)
 			{
 				Console.WriteLine($"{i}-{tomb3[i]}");
 			}
-			Console.ReadKey();
 		}
-		
+
+		private void Squares()
+		{
+			int[] squares = new int[100];
+			List<int> remainder0 = new List<int>();
+			List<int> remainder1 = new List<int>();
+			List<int> remainder2 = new List<int>();
+
+			for (int i = 0; i < squares.Length; i++)
+			{
+				squares[i] = (i+1)*(i+1);
+				if (squares[i] % 3 == 0)
+				{
+					remainder0.Add(squares[i]);
+				}
+				if (squares[i] % 3 == 1)
+				{
+					remainder1.Add(squares[i]);
+				}
+				if (squares[i] % 3 == 2)
+				{ 
+					remainder2.Add(squares[i]);
+				}
+				//Console.WriteLine(squares[i]);
+			}
+		}
 	}
 }
